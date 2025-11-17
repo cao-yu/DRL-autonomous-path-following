@@ -90,3 +90,19 @@ python eval_policy.py \
   --seed 0 \
   --load_model default
 ```
+
+## 📚 Citation
+
+If you use this code or find it helpful for your research, please consider citing:
+
+```bibtex
+@article{cao2024path,
+  title   = {Path following for autonomous mobile robots with deep reinforcement learning},
+  author  = {Cao, Yu and Ni, Kan and Kawaguchi, Takahiro and Hashimoto, Seiji},
+  journal = {Sensors},
+  volume  = {24},
+  number  = {2},
+  year    = {2024},
+  doi     = {10.3390/s24020561}
+}
+```
