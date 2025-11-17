@@ -35,3 +35,58 @@ To test generalization, we evaluate the **Pure Pursuit + SAC controller** on ran
 </p>
 
 The starting point is randomly generated in the vicinity of (0, 0).
+
+## 📦 Installation
+
+Clone this repository and install the required Python packages:
+
+```bash
+# Clone the repository
+git clone https://github.com/cao-yu/DRL-Autonomous-Path-Following.git
+cd DRL-Autonomous-Path-Following
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+## 🏃‍♂️ Usage
+
+### 1. Train the SAC policy
+
+```bash
+# From the repository root
+cd pure_pursuit_plus_sac
+
+# Train a SAC policy on a randomly generated path with a fixed seed
+python main.py \
+  --path random \
+  --seed 0 \
+  --save_model
+
+# Run a batch of experiments over multiple seeds
+# (see run_experiments.py for the list of seeds and settings)
+python run_experiments.py
+```
+
+### 2. Evaluate the trained policy
+
+```bash
+# Evaluate the trained policy on an eight-shaped path and display the animation
+python eval_policy.py \
+  --policy SAC \
+  --path eight \
+  --eval_episodes 1 \
+  --seed 0 \
+  --load_model default \
+  --disp_ani
+```
+
+```bash
+# Evaluate the trained policy on randomly generated paths over multiple episodes
+python eval_policy.py \
+  --policy SAC \
+  --path random \
+  --eval_episodes 10 \
+  --seed 0 \
+  --load_model default
+```
